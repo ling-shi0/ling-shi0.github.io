@@ -183,24 +183,25 @@ module.exports={
     {
       "bundleName": "com.bundle.package.tech",
       "modulePath": "index.js",
-      "url": "packages://web-sub-tech",
+      "url": "packages://package/web-sub-tech",
       "version": "0.0.1"
     },
     {
       "bundleName": "com.bundle.package.thinking",
       "modulePath": "index.js",
-      "url": "packages://web-sub-thinking",
+      "url": "packages://package/web-sub-thinking",
       "version": "0.0.1"
     },
     {
       "bundleName": "com.bundle.package.activity",
       "modulePath": "index.js",
-      "url": "packages://web-sub-activity",
+      "url": "packages://package/web-sub-activity",
       "version": "0.0.1"
     }
   ],
   "baseFileHost": "https://ling-shi0.github.io/"
 }
+
 },{}],3:[function(require,module,exports){
 "use strict";
 
@@ -217,7 +218,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
  * @Description:
  * @Author: lingshi
  * @Date: 2024-02-15 16:41:27
- * @LastEditTime: 2024-02-28 12:58:37
+ * @LastEditTime: 2024-02-28 14:08:05
  * @LastEditors: lingshi
  */
 var BaseServices = /*#__PURE__*/function () {
@@ -252,11 +253,8 @@ var BaseServices = /*#__PURE__*/function () {
 
           var libName = libItem.libName;
           if (window[libName] && window[libName].getInstance) {
-            console.log("走到了这 1");
             _this.services[libName] = window[libName].getInstance();
-            console.log(_this.services[libName]);
           } else {
-            console.log("走到了这2");
             _this.services[libName] = window[libName];
           }
         } else {
@@ -282,7 +280,6 @@ var BaseServices = /*#__PURE__*/function () {
             //   libItem.libName,
             //   resItem.url
             // );
-            // console.log(e);
           });
         }
       });
